@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  user30:
+    image: "debian-pc"
+    init:  true
+    environment:
+      - HOSTNAME=user30
+    volumes:
+      - /var/tmp/shared:/tmp/.shared
+    logging:
+      driver: syslog
+      options:
+        tag: "{{.ImageName}}/{{.Name}}/{{.ID}}"

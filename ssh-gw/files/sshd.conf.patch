@@ -1,0 +1,3 @@
+Match User debian-pc
+	ForceCommand /usr/bin/ssh -o StrictHostKeyChecking=no -o PasswordAuthentication=yes -l admin debian-pc
+
