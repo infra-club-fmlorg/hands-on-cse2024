@@ -2,7 +2,7 @@
 MAXUSERS = 36
 MAXUSERS = 6
 
-STAGE  = devel
+STAGE  = production
 B_CONF = work/docker-compose.${STAGE}.yml
 U_CONF = work/user-containers.${STAGE}.yml
 _CONF  = -f docker-compose.yml -f ${B_CONF} -f ${U_CONF}
