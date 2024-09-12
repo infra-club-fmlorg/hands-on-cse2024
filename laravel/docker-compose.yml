@@ -1,0 +1,26 @@
+services:
+  mariadb:
+    image: bitnami/mariadb:latest
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_USER=bn_myapp
+      - MARIADB_DATABASE=bitnami_myapp
+    volumes:
+      - mariadb_data:/bitnami/mariadb
+  laravel:
+    image: bitnami/laravel:latest
+    environment:
+      - DB_CONNECTION=mysql
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_DATABASE=bitnami_myapp
+      - DB_USERNAME=bn_myapp
+      - DB_PASSWORD=
+    volumes:
+      - ./laravel/project:/app
+    depends_on:
+      - mariadb
+
+volumes:
+  mariadb_data:

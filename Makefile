@@ -5,7 +5,9 @@ MAXUSERS = 6
 STAGE  = production
 B_CONF = work/docker-compose.${STAGE}.yml
 U_CONF = work/user-containers.${STAGE}.yml
-_CONF  = -f docker-compose.yml -f ${B_CONF} -f ${U_CONF}
+L_CONF = laravel/docker-compose.yml
+M_CONF = mysql/docker-compose.yml
+_CONF  = -f docker-compose.yml -f ${B_CONF} -f ${U_CONF} -f ${L_CONF} -f ${M_CONF}
 
 all:
 	@ printf "[Usage]\n\n"
