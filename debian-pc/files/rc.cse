@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd /home/admin || exit 1
+
+su admin -c "sudo /usr/bin/python3 /home/admin/www.py &"
+

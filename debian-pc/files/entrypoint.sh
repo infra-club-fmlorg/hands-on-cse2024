@@ -95,6 +95,11 @@ if [ -n "$url" ];then
     /bin/sh /rc.local
     printf "# script   ends (%s)\n" "`date`"
 fi
+
+# CSE-2024 EXTENSION
+if [ -f /rc.cse ];then
+	sh /rc.cse
+fi 
  
 #
 # (5) sshd
