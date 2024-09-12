@@ -1,5 +1,6 @@
 # global parameters
 MAXUSERS = 36
+MAXUSERS = 6
 
 STAGE  = devel
 B_CONF = work/docker-compose.${STAGE}.yml
